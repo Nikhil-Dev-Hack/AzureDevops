@@ -1,0 +1,94 @@
+﻿<script src="https://kit.fontawesome.com/1deec55ede.js" crossorigin="anonymous"></script>
+@*<div class="form-horizontal">
+        <hr />
+        <h4>Search for a client: </h4>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="Name">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </span>
+            @Html.TextBox("Search", "", new { @class = "form-control"})
+        </div>
+        <div><h6></h6></div>
+        <div class="input-group">
+            <span class="input-group-addon" id="Surname">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            </span>
+            @Html.TextBox("Search", "", new { @class = "form-control"})
+        </div>
+        <div><h6></h6></div>
+        <button type="submit" class="btn btn-default" data-toggle="modal" data-target="#infoModal">Search</button>
+
+
+        <script>
+    $(function() {
+
+        $("#Search,#Search").keyup(function(e) {
+            var n = $("#Search").val();
+            var sn = $("#Search").val();
+            $.get("/EmpDep/SearchJquery/Search=" + n +"&Search="+sn,function(r){
+                   //update ui with results
+                   $("#resultsTable").html(r);
+                });
+
+        });
+
+    });
+
+        </script>
+
+    </div>*@
+
+
+@model IEnumerable<ALLMVC.Models.EmpDep>
+<br />
+<br />
+
+<div class="container">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-append">
+                <i class="fas fa-search-location"></i>
+            </span>
+            <input type="text" id="Search" placeholder="Search" class="form-control" />
+        </div>
+    </div>
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>EmpName</th>
+            <th>Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="Search">
+                <td>@item.EmpName</td>
+                <td>@item.Location</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        function Contains(text_one, text_two) {
+            if (text_one.indexOf(text_two) != -1)
+                return true;
+        }
+        $("#Search").keyup(function () {
+            var searchText = $("#Search").val().toLowerCase();
+            $(".Search").each(function () {
+                if (!Contains($(this).text().toLowerCase(), searchText)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+        });
+    });
+</script>

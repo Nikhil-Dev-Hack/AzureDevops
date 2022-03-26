@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ALLMVC.Models.SocialIcon>
+
+    <div class="col-md-12" style="padding-top:50px">
+        @foreach (var item in Model)
+        {
+            <a style="background:@item.IconBgColor" href="@item.IconTargetUrl">
+                <i class="@item.IconClass"></i>
+                @item.IconName
+            </a>
+        }
+    </div>

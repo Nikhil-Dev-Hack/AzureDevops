@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "ViewComponent";
+}
+
+<style>
+    a {
+        padding: 5px;
+        margin: 5px;
+        color: white;
+    }
+
+    .main-div {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+</style>
+
+<div class="text-center main-div">
+    <h1 class="display-4">WELCOME</h1>
+    <h3>VIEW COMPONENT</h3>
+    @(await Component.InvokeAsync("SocialLinks", new { IconsToShow = 5 }))
+</div>
