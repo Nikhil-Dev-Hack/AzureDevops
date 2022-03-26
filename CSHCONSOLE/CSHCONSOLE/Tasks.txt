@@ -1,0 +1,23 @@
+﻿01. Create Employee class with the below requirements.
+Employee class should contain Id, FirstName, LastName, Salary, DeptName
+Accept Employee details from End User, and print the same.
+
+02. Add Department object, and Employee object in ArrayList (ArrayListDemo.cs file) and show the result.
+
+03. How to print just date from datetime variable?
+
+04. Add Employee details with below constraints.
+* EmpNo - Should be more than 1001
+* EmpName - should not be blank
+* EmpName - should conain minimum of 3 characters
+* Salary - Should be positive
+* DepartmentName - should accept only "Development"
+
+05. Accept Employee details(EmpNo, EName, Salary, DeptName) from end user for 5 employees and show them all in the output window.
+HashTable
+List
+Dictionary
+SortedList
+Stack
+Queue
+IList
