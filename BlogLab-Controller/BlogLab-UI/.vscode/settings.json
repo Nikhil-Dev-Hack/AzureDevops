@@ -1,0 +1,4 @@
+{
+    "ng-evergreen.checkFrequency": "Daily",
+    "ng-evergreen.upgradeChannel": "Latest"
+}
