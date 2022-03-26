@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Samples-Programs\\Tollplus-Projects\\OLD\\DevOpsDataJob\\DevOpsDataJob.csproj": {}
+  },
+  "projects": {
+    "D:\\Samples-Programs\\Tollplus-Projects\\OLD\\DevOpsDataJob\\DevOpsDataJob.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Samples-Programs\\Tollplus-Projects\\OLD\\DevOpsDataJob\\DevOpsDataJob.csproj",
+        "projectName": "DevOpsDataJob",
+        "projectPath": "D:\\Samples-Programs\\Tollplus-Projects\\OLD\\DevOpsDataJob\\DevOpsDataJob.csproj",
+        "packagesPath": "C:\\Users\\nbanuri\\.nuget\\packages\\",
+        "outputPath": "D:\\Samples-Programs\\Tollplus-Projects\\OLD\\DevOpsDataJob\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\nbanuri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.TeamFoundationServer.Client": {
+              "target": "Package",
+              "version": "[16.170.0, )"
+            },
+            "Microsoft.VisualStudio.Services.Client": {
+              "target": "Package",
+              "version": "[16.170.0, )"
+            },
+            "System.ComponentModel": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Composition.AttributedModel": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
