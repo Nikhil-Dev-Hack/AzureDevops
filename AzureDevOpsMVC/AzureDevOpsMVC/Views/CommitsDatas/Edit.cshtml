@@ -1,0 +1,79 @@
+﻿@model AzureDevOpsMVC.Models.CommitsData
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CommitsData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RepoId" />
+            <div class="form-group">
+                <label asp-for="CommitId" class="control-label"></label>
+                <input asp-for="CommitId" class="form-control" />
+                <span asp-validation-for="CommitId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CommitDate" class="control-label"></label>
+                <input asp-for="CommitDate" class="form-control" />
+                <span asp-validation-for="CommitDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adds" class="control-label"></label>
+                <input asp-for="Adds" class="form-control" />
+                <span asp-validation-for="Adds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deletes" class="control-label"></label>
+                <input asp-for="Deletes" class="form-control" />
+                <span asp-validation-for="Deletes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Edits" class="control-label"></label>
+                <input asp-for="Edits" class="form-control" />
+                <span asp-validation-for="Edits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comments" class="control-label"></label>
+                <input asp-for="Comments" class="form-control" />
+                <span asp-validation-for="Comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RemoteUrl" class="control-label"></label>
+                <input asp-for="RemoteUrl" class="form-control" />
+                <span asp-validation-for="RemoteUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Url" class="control-label"></label>
+                <input asp-for="Url" class="form-control" />
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

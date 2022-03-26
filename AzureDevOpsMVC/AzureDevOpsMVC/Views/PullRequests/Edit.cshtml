@@ -1,0 +1,99 @@
+﻿@model AzureDevOpsMVC.Models.PullRequest
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PullRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PullrequestId" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reviewer" class="control-label"></label>
+                <input asp-for="Reviewer" class="form-control" />
+                <span asp-validation-for="Reviewer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Url" class="control-label"></label>
+                <input asp-for="Url" class="form-control" />
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SourceRefName" class="control-label"></label>
+                <input asp-for="SourceRefName" class="form-control" />
+                <span asp-validation-for="SourceRefName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TargetRefName" class="control-label"></label>
+                <input asp-for="TargetRefName" class="form-control" />
+                <span asp-validation-for="TargetRefName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastMergeTargetCommit" class="control-label"></label>
+                <input asp-for="LastMergeTargetCommit" class="form-control" />
+                <span asp-validation-for="LastMergeTargetCommit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastMergeSourceCommit" class="control-label"></label>
+                <input asp-for="LastMergeSourceCommit" class="form-control" />
+                <span asp-validation-for="LastMergeSourceCommit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastMergeCommit" class="control-label"></label>
+                <input asp-for="LastMergeCommit" class="form-control" />
+                <span asp-validation-for="LastMergeCommit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RepoId" class="control-label"></label>
+                <input asp-for="RepoId" class="form-control" />
+                <span asp-validation-for="RepoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectId" class="control-label"></label>
+                <input asp-for="ProjectId" class="form-control" />
+                <span asp-validation-for="ProjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Workid" class="control-label"></label>
+                <input asp-for="Workid" class="form-control" />
+                <span asp-validation-for="Workid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkUrl" class="control-label"></label>
+                <input asp-for="WorkUrl" class="form-control" />
+                <span asp-validation-for="WorkUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

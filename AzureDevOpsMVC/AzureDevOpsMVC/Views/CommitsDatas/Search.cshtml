@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CommitsData>
+@{
+    ViewData["Title"] = "search";
+}
+
+
+
+<h1>search</h1>
+<form asp-action="Search" class="card card-body">
+    <div class="form-group">
+        <select name="Drop">
+            <option value="RepoId">RepoId</option>
+            <option value="CommitId">CommitId</option>
+            <option value="Email">Email</option>
+        </select>
+    
+
+    keyword:<input type="text" name="key" />
+    <input type="submit" value="submit" class="btn-danger" />
+    </div>
+
+</form>
+@if (Model != null)
+{
+<table class="table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Firstname</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.CommitId&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    @item.RepoId&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+                <td>
+                    @item.Email
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+}

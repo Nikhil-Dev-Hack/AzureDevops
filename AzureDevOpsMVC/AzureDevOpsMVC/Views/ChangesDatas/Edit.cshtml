@@ -1,0 +1,59 @@
+﻿@model AzureDevOpsMVC.Models.ChangesData
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ChangesData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CommitId" />
+            <div class="form-group">
+                <label asp-for="RepoId" class="control-label"></label>
+                <input asp-for="RepoId" class="form-control" />
+                <span asp-validation-for="RepoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObjectId" class="control-label"></label>
+                <input asp-for="ObjectId" class="form-control" />
+                <span asp-validation-for="ObjectId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Url" class="control-label"></label>
+                <input asp-for="Url" class="form-control" />
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Path" class="control-label"></label>
+                <input asp-for="Path" class="form-control" />
+                <span asp-validation-for="Path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chnagetype" class="control-label"></label>
+                <input asp-for="Chnagetype" class="form-control" />
+                <span asp-validation-for="Chnagetype" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sno" class="control-label"></label>
+                <input asp-for="Sno" class="form-control" />
+                <span asp-validation-for="Sno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

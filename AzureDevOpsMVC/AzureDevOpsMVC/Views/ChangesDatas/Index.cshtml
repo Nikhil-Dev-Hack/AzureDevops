@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AzureDevOpsMVC.Models.ChangesData>
+
+@{
+    ViewData["Title"] = "Changes";
+}
+
+<h1>Changes</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RepoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Path)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Chnagetype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sno)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Path)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Chnagetype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sno)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.CommitId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

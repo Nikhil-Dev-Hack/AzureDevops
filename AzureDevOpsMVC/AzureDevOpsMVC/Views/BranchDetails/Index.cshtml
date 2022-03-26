@@ -1,0 +1,84 @@
+﻿@model IEnumerable<AzureDevOpsMVC.Models.BranchDetails>
+
+@{
+    ViewData["Title"] = "Branches";
+}
+
+<h1>Branches</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AheadCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BehindCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommitId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.URL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Commiter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sno)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AheadCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BehindCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommitId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.URL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commiter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sno)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Name">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

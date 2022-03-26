@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AzureDevOpsMVC.Models.ReposData>
+
+@{
+    ViewData["Title"] = "Repos";
+}
+
+<h1>Repos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RepoName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepoURL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DefaultBranch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommitCount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepoURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefaultBranch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommitCount)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.ProjectName">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

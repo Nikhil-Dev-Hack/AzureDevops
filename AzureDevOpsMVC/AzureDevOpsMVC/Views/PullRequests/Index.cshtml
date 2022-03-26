@@ -1,0 +1,111 @@
+﻿@model IEnumerable<AzureDevOpsMVC.Models.PullRequest>
+
+@{
+    ViewData["Title"] = "PullRequest";
+}
+
+<h1>PullRequest</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reviewer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SourceRefName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TargetRefName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastMergeTargetCommit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastMergeSourceCommit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastMergeCommit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Workid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reviewer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SourceRefName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TargetRefName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastMergeTargetCommit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastMergeSourceCommit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastMergeCommit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Workid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkUrl)
+            </td>
+            <td>
+                <a asp-action="DetailsUserCommmits" asp-controller="UserCommit" asp-route-id="@item.LastMergeTargetCommit">lastmergeTarget Commit</a>
+                <br />
+                <a asp-action="DetailsUserCommmits" asp-controller="UserCommit" asp-route-id="@item.LastMergeSourceCommit">lastmergeSourceCommit</a>
+                <br />
+                <a asp-action="DetailsUserCommmits" asp-controller="UserCommit" asp-route-id="@item.LastMergeCommit">lastmerge Commit</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

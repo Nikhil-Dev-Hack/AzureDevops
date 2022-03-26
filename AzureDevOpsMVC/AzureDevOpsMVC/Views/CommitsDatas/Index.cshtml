@@ -1,0 +1,91 @@
+﻿@model IEnumerable<AzureDevOpsMVC.Models.CommitsData>
+
+@{
+    ViewData["Title"] = "Commits";
+}
+<div style="display:inline-block">
+    
+    <form asp-controller="CommitsDatas" asp-action="Search">
+        <h1>Commits</h1>
+        <input type="submit" value="Search" />
+    </form>
+</div>
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CommitId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommitDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adds)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deletes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edits)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RemoteUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Url)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommitId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommitDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adds)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deletes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edits)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RemoteUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Url)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.RepoId">Details</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
